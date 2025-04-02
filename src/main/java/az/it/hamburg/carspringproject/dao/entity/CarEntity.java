@@ -1,6 +1,7 @@
-package az.it.hamburg.carspringproject.entity;
+package az.it.hamburg.carspringproject.dao.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -10,6 +11,8 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
+import static jakarta.persistence.GenerationType.IDENTITY;
+
 @Getter
 @Setter
 @Entity
@@ -17,6 +20,7 @@ import java.time.LocalDateTime;
 public class CarEntity {
 
     @Id
+    @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
     private String brand;
